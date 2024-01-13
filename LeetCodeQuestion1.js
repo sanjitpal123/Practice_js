@@ -1,3 +1,5 @@
+//Palindrome check 
+
 /**
  * @param {number} x
  * @return {boolean}

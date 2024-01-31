@@ -1,14 +1,11 @@
-const promise1 = new Promise((resolve) => setTimeout(() => resolve('Promise 1 resolved'), 1000));
-const promise2 = new Promise((reject) => setTimeout(() => reject('Promise 2 rejected'), 500));
-const promise3 = new Promise((resolve) => setTimeout(() => resolve('Promise 3 resolved'), 1500));
+const promise1= new Promise((res,rej)=> setTimeout(()=>res("sanjit"),100));
+const promise2= new Promise((res,rej)=> setTimeout(()=>res("Manjit"),200));
+const promise3=new  Promise((res,rej)=> setTimeout(()=>res("Ranjit"),50));
+const racepromise= Promise.race([promise1,promise2,promise3]);
+racepromise.then((value)=>{
+    console.log(value,"Congratulations you won");
+},(value)=>{
+    console.log(value,"rejected");
+})
 
-const racePromise = Promise.race([promise1, promise2, promise3]);
 
-racePromise.then(
-    (value) => {
-        console.log('Race won by:', value);
-    },
-    (reason) => {
-        console.log('Race rejected with reason:', reason);
-    }
-);

@@ -1,42 +1,20 @@
-function promise1() {
-    return new Promise((res, rej) => {
-        setTimeout(() => {
-            res("promise 1");
-        }, 1000);
-    });
+
+function promise(age)
+{
+    return new Promise((res,rej)=>{
+        if(age>=18)
+        {
+            res("You can vote");
+        }
+        else{
+            rej("you can not vote");
+        }
+    },9000)
 }
-
-function promise2() {
-    return new Promise((res, rej) => {
-        setTimeout(() => {
-            res("promise 2");
-        }, 2000);
-    });
-}
-
-function promise3() {
-    return new Promise((res, rej) => {
-        setTimeout(() => {
-            res("promise 3");
-        }, 3000);
-    });
-}
-
-const ArrayOFPromise = [promise1, promise2, promise3];
-
-function executeSequentially(promises) {
-    // Start the chain with an immediately resolving promise
-    let chain = Promise.resolve();
-
-    promises.forEach((promiseFunction) => {
-        chain = chain.then(() => promiseFunction())
-            .then((value) => {
-                console.log("Successful with", value);
-            })
-            .catch((error) => {
-                console.log("Failed with", error);
-            });
-    });
-}
-
-executeSequentially(ArrayOFPromise);
+const p=promise(12);
+p.then((result)=>{
+    console.log(result);
+})
+.catch((value)=>{
+    console.log(value);
+})

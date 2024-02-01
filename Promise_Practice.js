@@ -1,19 +1,10 @@
-//Write a promise that resolves successfully and use .then() to handle the success. Then, introduce an error using throw and handle it with .catch().
-const promise=new Promise((res,rej)=> res(45));
-
-promise.then((value)=>{
-    console.log("Promise one is successfull with",value);
-
-});
-const promise2=new Promise((res,rej)=> rej(6));
-promise2.then((value)=>{
-    console.log("successfull with ",value);
-
+const promise1=new Promise((res,rej)=>res(10));
+const promise2=new Promise((res,rej)=>res(20));
+const promise3=new Promise ((res,rej)=>rej(30));
+Promise.all([promise1, promise2, promise3]).then((value)=>{
+    console.log("promise is fullfilled with :",value);
 },(value)=>{
     throw value;
-
 }).catch((error)=>{
-    console.log("Error is :" , error);
-
-});
-
+    console.log("Error is:",error);
+})

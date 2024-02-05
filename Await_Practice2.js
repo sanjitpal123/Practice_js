@@ -1,22 +1,33 @@
-//Implement an asynchronous function that fetches data from an API using await, and handle errors using a try-catch block.
-function fetchData()
-{
-    return new Promise((res,rej)=>{
-        
-        setTimeout(()=>{
-            rej(new Error("sanjit"));
-        },300);
+function makeTea() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Tea is Ready!");
+        }, 2000);
     });
 }
-async function execute()
-{
-    
-     try{
-        const fetchdataapi= await fetchData();
-     } catch(error)
-     {
-        console.error("Error:",error.message);
-     }
+
+function prepareBreakfast() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Toast is ready !");
+        }, 3000);
+    });
 }
-execute();
+
+const pr1 = makeTea();
+
+pr1
+    .then((result) => {
+        console.log(result);
+        return prepareBreakfast();
+    })
+    .catch((error) => {
+        throw error; 
+    })
+    .then((result) => {
+        console.log(result);
+    })
+    .catch((error) => {
+        console.error(error.message);
+    });
 

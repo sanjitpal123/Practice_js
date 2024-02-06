@@ -1,0 +1,42 @@
+function promise1() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(5);
+        }, 1000);
+    });
+}
+
+function promise2() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject(new Error("rejected"));
+        }, 1000);
+    });
+}
+
+function promise3() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject(new Error("rejected"));
+        }, 1000);
+    });
+}
+
+async function execute(arr) {
+    let resultofproimse = [];
+    const promises = arr.map(promise => promise()); 
+
+    const results = await Promise.allSettled(promises);
+    results.forEach((result, index) => {
+        if (result.status === 'fulfilled') {
+            resultofproimse.push(`Promise ${index + 1} status is: ${result.status}, Value: ${result.value}`);
+        } else {
+            resultofproimse.push(`Promise ${index + 1} status is: ${result.status}, Reason: ${result.reason.message}`);
+        }
+    });
+    return resultofproimse;
+}
+
+execute([promise1, promise2, promise3]).then(results => {
+    console.log(results);
+});

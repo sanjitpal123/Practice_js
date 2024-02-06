@@ -1,35 +1,28 @@
-function promise1() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(90);
-        }, 8900);
-    });
-}
+function Promise1(){
+    return new Promise((res,rej)=>{
+        const number=Math.floor(Math.random()*4);
 
-function promise2() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(100);
-        }, 7900);
-    });
+        setTimeout(()=>{
+            if(number>2)
+            {
+            res("Successfull Sanjit");
+            }
+            else{
+                rej(new Error("rejected"));
+            }
+          },899);
+    })
+    
 }
-
-function promise3() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            reject(90);
-        }, 900);
-    });
-}
-
-async function execute() {
-    try {
-        const [result1, result2, result3] = await Promise.all([promise1(), promise2(), promise3()]);
-        console.log("Fulfilled:", result1+result2+result3);
-    } catch (error) {
-        console.error("Error:", error);
+async function execute()
+{
+    try{
+    const p1=await Promise1();
+    console.log(p1);
+    } catch(error)
+    {
+        console.error(error.message);
     }
+
 }
-
 execute();
-

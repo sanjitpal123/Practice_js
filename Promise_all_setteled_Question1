@@ -1,0 +1,38 @@
+//Implement a function that takes an array of promises, some of which may reject. Use Promise.allSettled to wait for all promises to settle and log the results, including both fulfilled and rejected promises.
+function promise1()
+{
+    return new Promise((res,rej)=>{
+    setTimeout(()=>{
+        res("success");
+    });
+    });
+
+}
+
+function promise2()
+{
+    return new Promise((res,rej)=>{
+        setTimeout(()=>{
+            rej(new Error("rejected"));
+        });
+    });
+}
+
+ async function Promisehandler(arr)
+{
+     try{
+        const results=await Promise.allSettled(arr);
+        results.forEach((result,index)=>{
+            if(result.status==='fulfilled')
+            {
+                console.log(`Promise ${index+1}:fullfilled with value ${result.value}`);
+            }
+            else{
+                console.log(`Promise ${index+1}:Rejected  with value ${result.reason.message}`); 
+            }
+        })
+     } catch(error){
+        console.log(error);
+     } 
+}
+Promisehandler([promise1(),promise2()]);

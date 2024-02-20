@@ -1,22 +1,21 @@
-const promise1=new Promise((res,rej)=>{
-    setTimeout(()=>{
-        res('sucess1');
-    },7000);
-})
+//Implement a function fetchData(urls) that takes an array of URLs as input and fetches data from each URL using fetch API. Return a Promise that resolves with an array of fetched data.
+const urls=['www/google','www/amazon','www/flipkart'];
+function fetchData(urls)
+{
+   const promises=urls.map((url)=>{
+      return new Promise((res,rej)=>{
+          setTimeout(()=>{
+             rej('suceess');
+          },1000);
+      });
+   });
+   return Promise.all(promises);
+}
+ const pr1=fetchData(urls);
+ pr1.then((result)=>{
+    console.log(result);
+ }).catch((error)=>{
+    console.log('all are not resolved');
+ });
 
-const promise2=new Promise((res,rej)=>{
-    setTimeout(()=>{
-        res('sucess2');
-    },2000);
-})
-const promise3=new Promise((res,rej)=>{
-    setTimeout(()=>{
-        res('sucess3');
-    },1000);
-});
- const pr1=Promise.race([promise1,promise2,promise3]);
-pr1.then((result)=>{
-   console.log(result);
-}).catch((error)=>{
-    console.error(error.message);
-})
+

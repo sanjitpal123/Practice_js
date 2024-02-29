@@ -1,5 +1,5 @@
 async function innerFunction() {
-    return "Inner function resolved";
+    return "inner function resolved";
   }
   
   async function guessOutput2() {

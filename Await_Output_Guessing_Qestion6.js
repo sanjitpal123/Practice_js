@@ -1,5 +1,5 @@
 async function guessOutput6() {
-  console.log("Start");
+  console.log("start");
 
   try {
     await Promise.reject("An error occurred");

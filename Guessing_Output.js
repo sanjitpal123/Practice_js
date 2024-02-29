@@ -3,7 +3,7 @@ const obj={
     y:20,
     display:()=>{
       
-        console.log(`value of x is ${x} and value of y is ${y}`);
+        console.log(`Value of x is ${x} and value of y is ${y}`);
 
     }
 

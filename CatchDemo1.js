@@ -9,7 +9,7 @@ pr1
 .then(function onfullfillment(value){
     console.log("pr1 is fullfillment with",value);
 },function ofrejected(value){
-    console.log("pr1 is rejected with",value);
+    console.log("Pr1 is rejected with",value);
     throw 33
 })
 .then(function onfull(value){

@@ -10,7 +10,7 @@ function Promise1(){
             else{
                 rej(new Error("rejected"));
             }
-          },899);
+          },99);
     })
     
 }

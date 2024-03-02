@@ -1,5 +1,5 @@
 async function guessOutput1() {
-    console.log("Start");
+    console.log("start");
   
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {

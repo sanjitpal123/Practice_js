@@ -1,7 +1,7 @@
 const promse= function createpromise()
 {
     return new Promise((res,rej)=>{
-        rej('sanjit');
+        rej('sanjit pal');
     });
 }
 const pr1=promse();

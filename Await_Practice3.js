@@ -3,7 +3,7 @@ function Promisecreat(delay)
 {
     return new Promise((res,rej)=>{
         setTimeout(()=>{
-            res("succees ");
+            res("success it ");
         },delay);
     });
 }

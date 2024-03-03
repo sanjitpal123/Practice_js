@@ -8,7 +8,7 @@ function Promise1(){
             res("Successfull Sanjit");
             }
             else{
-                rej(new Error("Rejected"));
+                rej(new Error("rejected"));
             }
           },99);
     })

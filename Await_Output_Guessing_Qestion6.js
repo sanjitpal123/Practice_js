@@ -4,7 +4,7 @@ async function guessOutput6() {
   try {
     await Promise.reject("An error occurred");
   } catch (error) {
-    console.log(error);
+    console.log(err);
   }
 
   console.log("End");

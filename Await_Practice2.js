@@ -1,7 +1,7 @@
 function makeTea() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve("Tea is Ready!");
+            resolve("tea is Ready!");
         }, 2000);
     });
 }

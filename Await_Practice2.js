@@ -9,7 +9,7 @@ function makeTea() {
 function prepareBreakfast() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve("Toast is ready !");
+            resolve("toast is ready !");
         }, 3000);
     });
 }

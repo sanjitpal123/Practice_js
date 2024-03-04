@@ -9,4 +9,4 @@ async function guessOutput4() {
 
 guessOutput4();
 
-//Output is "start" 42 "end";
+//output is "start" 42 "end";

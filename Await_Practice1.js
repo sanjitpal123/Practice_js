@@ -5,7 +5,7 @@ function Promise1(){
         setTimeout(()=>{
             if(number>2)
             {
-            res("Successfull Sanjit");
+            res("Success Sanjit");
             }
             else{
                 rej(new Error("rejected"));

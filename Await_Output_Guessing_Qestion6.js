@@ -13,4 +13,4 @@ async function guessOutput6() {
 guessOutput6();
 
 
-//Output is "Start" "an error occurred"  "End";
+//Output is "Start" "an error Occurred"  "End";

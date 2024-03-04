@@ -4,7 +4,7 @@ async function guessOutput4() {
   const value = await 42;
   console.log(value);
 
-  console.log("end");
+  console.log("End");
 }
 
 guessOutput4();

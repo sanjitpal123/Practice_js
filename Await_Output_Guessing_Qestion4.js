@@ -1,5 +1,5 @@
 async function guessOutput4() {
-  console.log("Start");
+  console.log("start");
 
   const value = await 42;
   console.log(value);

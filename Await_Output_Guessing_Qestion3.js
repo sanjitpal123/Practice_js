@@ -9,7 +9,7 @@ async function guessOutput3() {
   console.log(result1);
   console.log(result2);
 
-  console.log("End");
+  console.log("end");
 }
 
 guessOutput3();

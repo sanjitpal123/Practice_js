@@ -13,4 +13,4 @@ async function guessOutput3() {
 }
 
 guessOutput3();
-// output is "Start" "Promise 1" "Promise2" "End"
+// Output is "Start" "Promise 1" "Promise2" "End"

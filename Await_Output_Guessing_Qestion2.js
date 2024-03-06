@@ -13,6 +13,6 @@ async function innerFunction() {
   
   guessOutput2();
 
-  // Output Is "Start" "Inner function resolved","End"
+  // Output Is "Start" "inner function resolved","End"
   
   

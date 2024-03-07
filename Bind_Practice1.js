@@ -1,5 +1,5 @@
 const person={
-    name:'sanjit Pal'
+    name:'Sanjit Pal'
 }
 const greet=function()
 {

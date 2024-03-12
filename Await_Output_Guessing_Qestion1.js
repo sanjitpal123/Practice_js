@@ -19,5 +19,5 @@ async function guessOutput1() {
   
   guessOutput1();
 
-  // output is "start", "promise rejected ", "End"
+  // output is "start", "Promise rejected ", "End"
   
